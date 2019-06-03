@@ -58,7 +58,7 @@ class ApiHandler(BaseHTTPRequestHandler):
         path = query_components.get("path")
         if not path:
             postvars = self._parse_POST()
-            path = (postvars[b'path'][0].decode('utf-8'),)
+            path = (postvars['path'][0],)
         return path
 
     def _parse_POST(self):
@@ -67,7 +67,7 @@ class ApiHandler(BaseHTTPRequestHandler):
             postvars = parse_multipart(self.rfile, pdict)
         elif ctype == 'application/x-www-form-urlencoded':
             length = int(self.headers['content-length'])
-            postvars = parse_qs(self.rfile.read(length), keep_blank_values=1)
+            postvars = parse_qs(self.rfile.read(length).decode('utf-8'), keep_blank_values=1)
         else:
             postvars = {}
         return postvars
