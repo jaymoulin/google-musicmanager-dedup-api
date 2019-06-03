@@ -16,7 +16,7 @@ Installation
 ---
 
 ```
-docker run -d --restart=always -v /path/to/your/db:/app/db --name googlemusic-dedup jaymoulin/google-musicmanager-dedup-api
+docker run -d --restart=always -p 80:80 -v /path/to/your/db:/app/db --name googlemusic-dedup jaymoulin/google-musicmanager-dedup-api
 ```
 
 You can mount a volume to `/app/db/` to keep the database outside the container
