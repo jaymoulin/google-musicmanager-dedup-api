@@ -15,7 +15,7 @@ build: qemu-arm-static qemu-aarch64-static
 		docker build -t jaymoulin/google-musicmanager-dedup-api:${VERSION}-$(arch) -f .Dockerfile --build-arg VERSION=${VERSION} ${CACHE} .;\
 	)
 publish:
-	docker push jaymoulin/google-musicmanager-dedup-api
+	docker push jaymoulin/google-musicmanager-dedup-api -a
 	cat manifest.yml | sed "s/\$$VERSION/${VERSION}/g" > manifest.yaml
 	cat manifest.yaml | sed "s/\$$FULLVERSION/${FULLVERSION}/g" > manifest2.yaml
 	mv manifest2.yaml manifest.yaml
