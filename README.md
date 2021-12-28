@@ -13,7 +13,7 @@ DISCLAIMER: As-of 2021, this product does not have a free support team anymore. 
 
 (This product is available under a free and permissive license, but needs financial support to sustain its continued improvements. In addition to maintenance and stability there are many desirable features yet to be added.)
 
-This image allows you utilize deduplication feature for [Google MusicManager](https://github.com/jaymoulin/google-music-manager)
+This image allows you utilize deduplication feature for [Youtube Music Uploader](https://github.com/jaymoulin/youtube-music-uploader)
 
 Installation
 ---
