@@ -17,6 +17,7 @@ This image allows you utilize deduplication feature for [Youtube Music Uploader]
 
 Installation
 ---
+Please note that this package is also hosted on Github Container Registry, just add `ghcr.io/` before the image name (`docker pull ghcr.io/jaymoulin/google-musicmanager-dedup-api` instead of `jaymoulin/google-musicmanager-dedup-api`)
 
 ```
 docker run -d --restart=always -p 80:80 -v /path/to/your/db:/app/db --name googlemusic-dedup jaymoulin/google-musicmanager-dedup-api
