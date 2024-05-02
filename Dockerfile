@@ -1,18 +1,14 @@
-FROM python:alpine as builder
-
-COPY qemu-*-static /usr/bin/
-
-FROM builder
+FROM python:alpine
 
 ARG VERSION=1.0.0
+ARG TARGETPLATFORM
 
-LABEL maintainer="Jay MOULIN <jaymoulin@gmail.com> <https://twitter.com/MoulinJay>"
-LABEL version=${VERSION}
+LABEL maintainer="Jay MOULIN <https://jaymoulin.me>"
+LABEL version="${VERSION}-${TARGETPLATFORM}"
 
 WORKDIR /app
 COPY . /app/
-RUN pip3 install --upgrade pip && \
-    pip3 install -e .
+RUN pip3 install -e .
 
 VOLUME /root/db
 
